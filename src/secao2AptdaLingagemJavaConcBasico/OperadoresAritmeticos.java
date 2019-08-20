@@ -1,6 +1,5 @@
-package javaUdemy;
+package secao2AptdaLingagemJavaConcBasico;
 
-import java.net.SocketTimeoutException;
 
 public class OperadoresAritmeticos {
 

@@ -1,4 +1,4 @@
-package javaUdemy;
+package secao2AptdaLingagemJavaConcBasico;
 
 import java.util.Scanner;
 
