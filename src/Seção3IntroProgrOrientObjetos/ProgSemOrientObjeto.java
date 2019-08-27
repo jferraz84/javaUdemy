@@ -10,23 +10,28 @@ public class ProgSemOrientObjeto {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 	
-		double xA, xB, xC, yA, yB, yC;
+		TrianguloOrientObjeto x, y;
+		x = new TrianguloOrientObjeto();
+		y = new TrianguloOrientObjeto();
 		
 		System.out.println("Digite  as medidas do triangulo x: ");
-		xA = sc.nextDouble();
-		xB = sc.nextDouble();
-		xC = sc.nextDouble();
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c = sc.nextDouble();
 		
 		System.out.println("Digite as medidas do triangulo y: ");
-		yA = sc.nextDouble();
-		yB = sc.nextDouble();
-		yC = sc.nextDouble();
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c= sc.nextDouble();
 		
-		double p = (xA + xB + xC) / 2; 
-		double areax = Math.sqrt( p * (p - xA) * (p -xB) * (p - xC));
+		double areax = x.area();
+		double areay = y.area();
+		
+		/*double p = (x.a + x.b + x.c) / 2; 
+		double areax = Math.sqrt( p * (p - x.a) * (p -x.b) * (p - x.c));*/
 
-		 p = (yA + yB + yC) / 2;
-		double areay = Math.sqrt( p * (p - yA) * (p -yB) * (p - yC));
+		 /*p = (y.a + y.b + y.c) / 2;
+		double areay = Math.sqrt( p * (p - y.a) * (p -y.b) * (p - y.c));*/
 		
 		System.out.printf("A area do Triangulo X é : %.4f%n ", areax );
 		System.out.printf("A area do Triangulo y é : %.4f%n", areay );
