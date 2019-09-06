@@ -16,9 +16,15 @@ public class Programa {
 				String name = sc.nextLine();
 				System.out.println("Price : R$  ");
 				double price = sc.nextDouble();
-				System.out.println("Quantity :  ");
-				int  quantity = sc.nextInt();
-				Produto produto = new Produto(name, price, quantity);
+				/*System.out.println("Quantity :  ");
+				int  quantity = sc.nextInt();*/
+				Produto produto = new Produto(name, price);
+				
+				produto.setName( "Computador;");
+				System.out.println("Dados do novo produto " + produto.getName());
+				produto.setPrice(1200.00);
+				System.out.println("O preço do produto é " + produto.getPrice());
+				
 				char resp1;
 				char resp2;
 				
@@ -32,7 +38,7 @@ public class Programa {
 			
 				if (resp1 == 'a' ) {
 					System.out.println("Enter the number of products to be added in stock:  ");
-					quantity = sc.nextInt();
+					int quantity = sc.nextInt();
 					produto.addProducts(quantity);
 					System.out.println("-------------------------------");
 					System.out.println("Update data: " + produto);
@@ -41,7 +47,7 @@ public class Programa {
 					System.out.println("-------------------------------");
 				} else {
 					System.out.println("Enter the number of products to be removed in stock:  ");
-					quantity = sc.nextInt();
+					int quantity = sc.nextInt();
 					produto.removeProducts(quantity);
 					System.out.println("--------------------------------");
 					
