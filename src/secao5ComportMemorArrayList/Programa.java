@@ -10,13 +10,21 @@ public class Programa {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);;
 		
-		System.out.println();
+		int n = sc.nextInt();
+		double[] vect = new double[n];
 		
+		for (int i = 0; i < n; i++) {
+			 vect[i] = sc.nextDouble();	
+		}
 		
-		
-		
-		
-		
+		double soma = 0;
+		 for (int i = 0; i < n; i++) {
+			soma = vect[i];
+			
+		}
+		 double altmed = soma / n;
+		 
+		System.out.println("A altura média é de : "+ altmed);
 		
 		sc.close();
 	}
