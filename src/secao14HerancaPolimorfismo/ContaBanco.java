@@ -12,6 +12,9 @@ public class ContaBanco {
 		Conta acc1 = bacc;
 		Conta acc2 = new ContaEmpresa(1003, "Helo", 15000.00, 5000.00);
 		Conta acc3 = new ContaPoupanca(1004, "Heloa", 1000.00, 3.54);
+		Conta acc6 = new Conta(1010, "Luis Carlos", 1000.00);
+		Conta acc7 = new ContaPoupanca(1020, "Aline Ferraz", 1000.00, 0.01);
+		Conta acc8 = new ContaEmpresa(1030, "Marli", 1000.0, 500.0);
 		
 		// DOWCASTING
 		
@@ -32,9 +35,35 @@ public class ContaBanco {
 			System.out.println("Saldo Atualizado!");
 			
 		}
+		acc2.saque(100.0);
+		System.out.println(acc2.getSaldo());
+		System.out.println("---------------------------");
 		
-		System.out.println("");
+		acc6.saque(200.00);
+		System.out.println(acc6.getSaldo() + " = Com desconto da taxa");
+		System.out.println("---------------------------");
 		
+		acc7.saque(200.00);
+		System.out.println(acc7.getSaldo() + " = Sem desconto da taxa");
+		System.out.println("---------------------------");
+		
+		acc8.saque(200.00);
+		System.out.println(acc8.getSaldo() + " = Conta Empresarial, desconto diferenciado !!");
+		System.out.println("---------------------------");
+		
+		// **** INTRODUÇÃO AO POLIMORFISMO ****
+	
+		Conta x = new Conta(1040, "Jorge", 1000.00);
+		Conta y = new ContaPoupanca(1050, "Aline", 1000.00, 0.01);
+		
+		x.saque(50.00);
+		y.saque(50.0);
+		
+		System.out.println("Saldo Disponivel para: " + x.getTitular() +" = R$ " + x.getSaldo());
+		System.out.println("Saldo disponivel para: " + y.getTitular() + " = R$ " + y.getSaldo());
+		System.out.println("-----------------------------");
 	}
 
+		
+	
 }
