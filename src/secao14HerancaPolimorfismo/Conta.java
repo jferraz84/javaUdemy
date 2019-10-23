@@ -1,6 +1,10 @@
 package secao14HerancaPolimorfismo;
 
-public class Conta {
+// public class Conta {
+
+// Mudado para usar no exercicio de classe ABSTRATA !!!!!!
+
+public abstract class Conta {
 	
 	private int numero;
 	private String titular;

@@ -2,7 +2,7 @@ package secao14HerancaPolimorfismo;
 
 public class ContaBanco {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 	
 		Conta acc = new Conta(1001, "Jorge", 0.0);
 		ContaEmpresa bacc = new ContaEmpresa(1002, "Aline", 0.0, 500.0);
@@ -65,5 +65,5 @@ public class ContaBanco {
 	}
 
 		
-	
+	*/
 }

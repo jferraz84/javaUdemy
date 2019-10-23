@@ -32,8 +32,8 @@ public class Produto {
 	
 	public String etiquetaDePreco() {
 		return nome 
-				+ " $ " 
-				+ String.format("%.2f", preco)+ ("Produto novo !!");
+				+ " R$ " 
+				+ String.format("%.2f", preco)+ (" Produto novo !!");
 	}
 
 }
