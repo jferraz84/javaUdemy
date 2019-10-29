@@ -40,19 +40,24 @@ public class ExercicioTratamExecoesReserva {
 			dataSaida = sdf.parse(sc.next());
 			System.out.println("----------------------------");
 			
-			Date now = new Date();
-			if (dataEntrada.before(now) || (dataSaida.before(now)) {
+			/*Date now = new Date();
+			if (dataEntrada.before(now) || dataSaida.before(now)) {
 				System.out.println("Erro na Reserva: 'As datas de RESERVA devem ser datas futuras'");
 			}
 			else if (! dataSaida.after(dataEntrada)){
 				System.out.println("");
+			}*/
+			
+			String error = reservaHotel.atualizaDatas(dataEntrada, dataSaida);
+			if (error != null) {
+				System.out.println("ERRO ! " + error);
 			}
-			
-			reservaHotel.atualizaDatas(dataEntrada, dataSaida);
-			
-			System.out.println(reservaHotel);
-			System.out.println("|-----------------------------|");
-			System.out.println("Atualizado com SUCESSO !!");
+			else {
+				System.out.println(reservaHotel);
+				System.out.println("|-----------------------------|");
+				System.out.println("Atualizado com SUCESSO !!");
+				
+			}
 		}
 		
 		

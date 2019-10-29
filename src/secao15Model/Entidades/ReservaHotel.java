@@ -43,9 +43,18 @@ public class ReservaHotel {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 
-	public void atualizaDatas(Date dataEntrada, Date dataSaida) {
+	public String atualizaDatas(Date dataEntrada, Date dataSaida) {	
+		Date now = new Date();
+		if ( dataEntrada.before(now) || dataSaida.before(now)){
+			return "Erro na Reserva: 'As datas de RESERVA devem ser datas futuras'";
+		}
+		if (! dataSaida.after(dataEntrada)){
+			return "ERRO !! A data de saida deve ser posterior a data de entrada";
+		}
+		
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
+		return null;
 
 	}
 
@@ -54,7 +63,7 @@ public class ReservaHotel {
 		System.out.println("|-------Hotel Beira Mar-------|");
 		return "|======Reserva Hotel !!!======|\n" 
 				  +"|Numero Quarto =  " 
-	              + numeroQuarto +"         |"
+	              + numeroQuarto +"        |"
 	              + "\n|Data Entrada  =  " 
 				  + sdf.format(dataEntrada)+"  |"
 				  + "\n|Data Saida    =  "  
