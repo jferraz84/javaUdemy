@@ -6,27 +6,27 @@ import java.util.Date;
 import java.util.Scanner;
 
 import secao15Model.Entidades.ReservaHotel;
+import secao15Model.exceptions.DomainExceptions;
 
 public class ExercicioTratamExecoesReserva {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args)  {
 		
 		Scanner sc = new Scanner(System.in);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
-		
-		System.out.println("Numero do Quarto: ");
-		int numero = sc.nextInt();
-		System.out.print("Data de entrada ( dd/MM/yyyy ): ");
-		Date dataEntrada = sdf.parse(sc.next());
-		System.out.print("Data de saída ( dd/MM/yyyy ): ");
-		Date dataSaida = sdf.parse(sc.next());
-		
-		if (!dataSaida.after(dataEntrada)) {
-			System.out.println("Erro na Reserva: Data de entrada não pode ser superior data de saida");
-		}
-		else {
+		try {
+			
+			System.out.println("Numero do Quarto: ");
+			int numero = sc.nextInt();
+			System.out.print("Data de entrada ( dd/MM/yyyy ): ");
+			Date dataEntrada = sdf.parse(sc.next());
+			System.out.print("Data de saída ( dd/MM/yyyy ): ");
+			Date dataSaida = sdf.parse(sc.next());
+			
+			
+			
 			ReservaHotel reservaHotel = new ReservaHotel(numero, dataEntrada, dataSaida);
 			System.out.println(reservaHotel);
 			System.out.println("|-----------------------------|");
@@ -40,26 +40,19 @@ public class ExercicioTratamExecoesReserva {
 			dataSaida = sdf.parse(sc.next());
 			System.out.println("----------------------------");
 			
-			/*Date now = new Date();
-			if (dataEntrada.before(now) || dataSaida.before(now)) {
-				System.out.println("Erro na Reserva: 'As datas de RESERVA devem ser datas futuras'");
-			}
-			else if (! dataSaida.after(dataEntrada)){
-				System.out.println("");
-			}*/
+		    reservaHotel.atualizaDatas(dataEntrada, dataSaida);
 			
-			String error = reservaHotel.atualizaDatas(dataEntrada, dataSaida);
-			if (error != null) {
-				System.out.println("ERRO ! " + error);
-			}
-			else {
 				System.out.println(reservaHotel);
 				System.out.println("|-----------------------------|");
 				System.out.println("Atualizado com SUCESSO !!");
-				
-			}
-		}
 		
+		}
+		catch (ParseException e) {
+			System.out.println("Data Inválida !!");
+		}
+		catch (DomainExceptions e) {
+			System.out.println(e.getMessage() );
+		}
 		
 		sc.close();
 		

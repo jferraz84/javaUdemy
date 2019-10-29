@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import secao15Model.exceptions.DomainExceptions;
+
 public class ReservaHotel {
 
 	private int numeroQuarto;
@@ -16,7 +18,10 @@ public class ReservaHotel {
 
 	}
 
-	public ReservaHotel(int numeroQuarto, Date dataEntrada, Date dataSaida) {
+	public ReservaHotel(int numeroQuarto, Date dataEntrada, Date dataSaida) throws DomainExceptions {
+		if (! dataSaida.after(dataEntrada)){
+			throw new DomainExceptions("ERRO !! A data de saida deve ser posterior a data de entrada");
+		}
 		this.numeroQuarto = numeroQuarto;
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
@@ -43,20 +48,21 @@ public class ReservaHotel {
 		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 
-	public String atualizaDatas(Date dataEntrada, Date dataSaida) {	
+	public void atualizaDatas(Date dataEntrada, Date dataSaida) throws DomainExceptions {	
+		
 		Date now = new Date();
 		if ( dataEntrada.before(now) || dataSaida.before(now)){
-			return "Erro na Reserva: 'As datas de RESERVA devem ser datas futuras'";
+			throw new DomainExceptions("Erro na Reserva: 'As datas de RESERVA devem ser datas futuras'");
 		}
 		if (! dataSaida.after(dataEntrada)){
-			return "ERRO !! A data de saida deve ser posterior a data de entrada";
+			throw new DomainExceptions("ERRO !! A data de saida deve ser posterior a data de entrada");
 		}
 		
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
-		return null;
 
-	}
+		}
+	
 
 	@Override
 	public String toString() {
