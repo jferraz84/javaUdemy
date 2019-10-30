@@ -1,6 +1,6 @@
 package secao15Model.exceptions;
 
-public class DomainExceptions extends Exception{
+public class DomainExceptions extends RuntimeException{
 	
 	private static final long serialVersionUID = 1L;
 
