@@ -8,6 +8,7 @@ public class Posicao {
 	public Posicao(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
+	
 	}
 
 	public int getLinha() {
@@ -28,7 +29,7 @@ public class Posicao {
 
 	@Override
 	public String toString() {
-		return linha + ", "  + coluna ;
+		return linha + ", " + coluna ;
 	}
 	
 	

@@ -1,7 +1,6 @@
 package secao16ProjetoXadrez;
 
 import secao16Xadrez.PartidaDeXadrez;
-import secao16Xadrez.PecaXadrez;
 
 public class JogoXadrez {
 
@@ -10,6 +9,5 @@ public class JogoXadrez {
 		PartidaDeXadrez partidadeXadrez = new PartidaDeXadrez();
 		UI.printTabuleiro(partidadeXadrez.getPecas());
 		
-	
 	}
 }

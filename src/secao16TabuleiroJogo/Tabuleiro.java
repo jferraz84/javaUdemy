@@ -2,38 +2,45 @@ package secao16TabuleiroJogo;
 
 public class Tabuleiro {
 	
-	private int linha;
-	private int coluna;
-	private Peca [] [] pecas;
+	private int linhas;
+	private int colunas;
+	private Peca[][] pecas;
 	
-	public Tabuleiro(int linha, int coluna) {
-		this.linha = linha;
-		this.coluna = coluna;
-		pecas = new Peca [linha] [coluna];
+	public Tabuleiro(int linhas, int colunas) {
+		this.linhas = linhas;
+		this.colunas = colunas;
+		pecas = new Peca[linhas][colunas];
 		
 	}
 
-	public int getLinha() {
-		return linha;
+	public int getLinhas() {
+		return linhas;
 	}
 
-	public void setLinha(int linha) {
-		this.linha = linha;
+	public void setLinhas(int linhas) {
+		this.linhas = linhas;
 	}
 
-	public int getColuna() {
-		return coluna;
+	public int getColunas() {
+		return colunas;
 	}
 
-	public void setColuna(int coluna) {
-		this.coluna = coluna;
+	public void setColunas(int colunas) {
+		this.colunas = colunas;
 	}
 	
 	public Peca peca(int linha, int coluna) {
-		return pecas[linha] [coluna];
+		return pecas[linha][coluna];
 	}
 	
 	public Peca peca (Posicao posicao) {
-		return pecas [posicao.getColuna()] [posicao.getLinha()];
+		return pecas[posicao.getLinha()][posicao.getColuna()];
 	}
+	
+	public void colocarPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
+	
+	
 }
