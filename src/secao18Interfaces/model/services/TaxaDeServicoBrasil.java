@@ -1,6 +1,6 @@
 package secao18Interfaces.model.services;
 
-public class TaxaDeServicoBrasil {
+public class TaxaDeServicoBrasil implements TaxaDeServico {
 
 	public double tax(double valor) {
 		if (valor <= 100.0) {
@@ -10,4 +10,6 @@ public class TaxaDeServicoBrasil {
 			return valor * 0.15;
 		}
 	}
+
+	
 }
