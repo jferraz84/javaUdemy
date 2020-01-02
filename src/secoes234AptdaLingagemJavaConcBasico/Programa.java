@@ -6,6 +6,7 @@ public class Programa {
 	
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("unused")
 		boolean completed = false;
 		char gender = '\u0041';
 		byte n1 = 126;
