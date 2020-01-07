@@ -26,17 +26,29 @@ public class Produto1 {
 		this.price = price;
 	}
 	
-	public static boolean staticProdutoPredicate(Produto1 p) {
+	//Aula 03 PREDICATE
+	/*public static boolean staticProdutoPredicate(Produto1 p) {
 		return p.getPrice() >= 100.0;
 	}
 	
 	public boolean nonStaticProdutoPredicate() {
 		return price >= 100.0;
+	}*/
+	
+	// //Aula 04 CONSUMER
+	public static void staticPriceUpdate(Produto1 p ) {
+		p.setPrice(p.getPrice() * 1.1);
 	}
+	
+	public void nonStaticPriceUpdate() {
+		// setPrice(getPrice() * 1.1);   OU ...
+		price = price *1.1;
+	}
+	
 
-	@Override
+	@Override  
 	public String toString() {
-		return "Produto1  name = " + name + ",\nprice = " + price;
+		return "Produto: "+ name + ",  Preco: " + String.format("%.2f", price);
 	}
 
 	

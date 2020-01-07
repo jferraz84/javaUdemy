@@ -2,6 +2,7 @@ package secao20ProgFuncionalExpLambda.aplication;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Predicate;
 
 import secao20ProgFuncionalExpLambda.entities.Produto1;
@@ -9,7 +10,9 @@ import secao20ProgFuncionalExpLambda.entities.Produto1;
 public class ProgramaAula3Predicate {
 
 	public static void main(String[] args) {
-
+		
+		Locale.setDefault(Locale.US);
+		
 		List<Produto1> list = new ArrayList<>();
 		list.add(new Produto1("Tv", 900.00));
 		list.add(new Produto1("Mouse", 50.00));
@@ -22,14 +25,14 @@ public class ProgramaAula3Predicate {
 		/* Reference method com método estático
 		list.removeIf(Produto1::staticProdutoPredicate);*/
 		
-		/*Reference method com método não estático
+		/*Reference method com método NÃO estático
 		list.removeIf(Produto1::nonStaticProdutoPredicate);*/
 		
-		/* Expressão lambda declarada
+		/* Expressão lambda DECLARADA
 		Predicate<Produto1> pred = p -> p.getPrice() >= 100.0;
 		list.removeIf(pred);*/
 		
-		//Expressão lambda inline
+		//Expressão lambda INLINE
 		list.removeIf(p -> p.getPrice() >= 100.0);
 		
 		
