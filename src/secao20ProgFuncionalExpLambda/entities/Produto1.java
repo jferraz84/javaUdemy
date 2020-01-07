@@ -35,14 +35,23 @@ public class Produto1 {
 		return price >= 100.0;
 	}*/
 	
-	// //Aula 04 CONSUMER
-	public static void staticPriceUpdate(Produto1 p ) {
+    //Aula 04 CONSUMER
+	/*public static void staticPriceUpdate(Produto1 p ) {
 		p.setPrice(p.getPrice() * 1.1);
 	}
 	
 	public void nonStaticPriceUpdate() {
 		// setPrice(getPrice() * 1.1);   OU ...
 		price = price *1.1;
+	}*/
+	
+	//Aula 05 FUNCTION
+	public static String staticUpperCaseName(Produto1 p) {
+		return p.getName().toUpperCase();
+	}
+	
+	public String nonStaticUpperCaseName() {
+		return name.toUpperCase();
 	}
 	
 
