@@ -45,14 +45,14 @@ public class Produto1 {
 		price = price *1.1;
 	}*/
 	
-	//Aula 05 FUNCTION
+	/*Aula 05 FUNCTION
 	public static String staticUpperCaseName(Produto1 p) {
 		return p.getName().toUpperCase();
 	}
 	
 	public String nonStaticUpperCaseName() {
 		return name.toUpperCase();
-	}
+	}*/
 	
 
 	@Override  
