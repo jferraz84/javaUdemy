@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
 import secao20ProgFuncionalExpLambda.entities.Produto1;
 
 public class ExercicioResolvido1 {
@@ -18,7 +17,6 @@ public class ExercicioResolvido1 {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
 		
 		System.out.println("Digite o caminho do Arquivo: ");
 		String arq = sc.nextLine();
