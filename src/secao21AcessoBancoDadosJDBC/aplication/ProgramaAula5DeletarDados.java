@@ -23,7 +23,7 @@ public class ProgramaAula5DeletarDados {
 					+ "WHERE "
 					+ "Id = ?");
 			
-			st.setInt(1, 2);
+			st.setInt(1, 5);
 					
 			int linhasModificadas = st.executeUpdate();
 			
